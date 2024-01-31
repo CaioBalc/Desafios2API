@@ -235,11 +235,11 @@ $request = new Request();
 $controller = new Controller();
 $router = new Router();
 
-# Chama o método statusHttp da classe Request
+# Chama statusHttp da classe Request
 $request->statusHttp($request->method);
 
-# Chama o método queryPokémon da classe Controller
+# Chama queryPokémon da classe Controller
 $controller->queryPokémon($request->route);
 
-# Chama o método pagePokémon da classe Router
+# Chama pagePokémon da classe Router
 $router->pagePokémon($request->route);
