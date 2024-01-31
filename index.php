@@ -176,7 +176,7 @@ class Router{
 
                 # Chamando o método que faz a consulta à API, passando o limite que definimos.
                 $response = file_get_contents("https://pokeapi.co/api/v2/pokemon?limit=$limit");
-                $response = json_decode($limit, true);
+                $response = json_decode($response, true);
 
                 # Função utilizada para formatar os dados que obtivemos da API para um retorno mais próximo daquilo que
                 # desejamos retornar na nossa própria API.
@@ -230,3 +230,16 @@ class Router{
     }
 
 }
+
+$request = new Request();
+$controller = new Controller();
+$router = new Router();
+
+# Chama o método statusHttp da classe Request
+$request->statusHttp($request->method);
+
+# Chama o método queryPokémon da classe Controller
+$controller->queryPokémon($request->route);
+
+# Chama o método pagePokémon da classe Router
+$router->pagePokémon($request->route);
